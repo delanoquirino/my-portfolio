@@ -22,12 +22,14 @@ export const HeroSection = () => {
           </div>
         </div>
         <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-          <Image
-            src="/hero/hero-image.png"
-            width={500}
-            height={500}
-            alt="hero image"
-          />
+          <div className="w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
+            <Image
+                src="/hero/hero-image.png"
+              width={500}
+              height={500}
+              alt="hero image"
+            />
+          </div>
         </div>
       </div>
     </section>
