@@ -18,6 +18,9 @@ export default function BlogPost({postinfo}: PostSectionProps) {
  
 
   return (
+    <div className="h-full w-full bg-black">
+
+
     <div className="container mt-24 mx-auto px-3 md:px-12 py-4">
       {path && <Transition />}
       <Link
@@ -45,7 +48,6 @@ export default function BlogPost({postinfo}: PostSectionProps) {
           <div>
             <p className="font-bold text-zinc-500">{postinfo[0].author.name}</p>
             <p className="text-zinc-600 text-sm">
-              {" "}
               {format(new Date(postinfo[0].createdAt), "dd 'de' MMM 'de' yyyy", {
                 locale: ptBR,
               })}
@@ -64,5 +66,7 @@ export default function BlogPost({postinfo}: PostSectionProps) {
         </div>
       </div>
     </div>
+    </div>
   );
 }
+

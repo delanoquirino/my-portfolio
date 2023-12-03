@@ -64,7 +64,7 @@ export default async function Blog() {
             />
           </div>
           <div className="flex flex-1 h-full flex-col gap-3 lg:gap-6">
-            <h1 className="font-bold text-3xl md:text-[48px] text-blue-600">
+            <h1 className="font-bold text-3xl md:text-[48px] text-white">
             {posts[0]?.title}
             </h1>
             <p className="text-zinc-600 text-sm md:text-base text-justify lg:text-left">

@@ -13,7 +13,7 @@ interface CardProps {
 }
 
 export const CardPost = ({title, subtitle, author, createdAt, urlImage, slug}: CardProps) => {
-  console.log(title)
+  
   return (
     <Link
       href={`/blog/${slug}`}
