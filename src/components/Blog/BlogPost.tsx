@@ -34,6 +34,8 @@ export default function BlogPost({postinfo}: PostSectionProps) {
             alt={postinfo[0].title}
             fill={true}
             objectFit="cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 60vw"
+
           />
         </div>
         <div className="flex w-full flex-col mt-4 sm:mt-8">

@@ -25,6 +25,8 @@ export const CardPost = ({title, subtitle, author, createdAt, urlImage, slug}: C
           alt={title}
           fill={true}
           style={{ objectFit: "cover" }}
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 60vw"
+
         />
       </div>
       <div className="flex w-full flex-1 flex-col justify-between gap-1 sm:gap-2">
