@@ -17,8 +17,6 @@ const navLinks = [
     path: "#projects"},
     {title: "Contato",
     path: "#contact"},
-    {title: "Blog",
-    path: "blog"},
 ]
 
 export const Navbar = () => {
