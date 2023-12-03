@@ -11,7 +11,7 @@ interface PostParams {
 
 const getPostDetails = async (slug: string): Promise<PostPageData> => {
   const GET_POST = `
-  query Post() {
+  query Post{
     posts(where: { slug: "${slug}"}) {
       id
       title
@@ -30,7 +30,7 @@ const getPostDetails = async (slug: string): Promise<PostPageData> => {
   }
 `;
 
-  return fetchHygraphQuery(GET_POST, 1000 * 60 * 60 * 24);
+  return fetchHygraphQuery(GET_POST, 1000 * 60 * 60 * 24, );
 };
 
 export default async function PostBlog({params: {slug}}: PostParams) {
@@ -38,8 +38,7 @@ export default async function PostBlog({params: {slug}}: PostParams) {
   
   return (
     <main className="flex min-h-screen flex-col bg-black">
-     
-      <BlogPost postinfo={posts}/>
+        <BlogPost postinfo={posts}/>
     </main>
   );
 }
