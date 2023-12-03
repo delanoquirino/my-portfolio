@@ -37,7 +37,7 @@ export default async function Post({ params: { slug } }: PostParams) {
 
   return (
     <div className="flex min-h-screen flex-col bg-black">
-      <BlogPost postinfo={posts} />
+      
     </div>
   );
 }
