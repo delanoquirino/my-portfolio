@@ -42,7 +42,7 @@ return fetchHygraphQuery(
 
 export default async function Blog() {
   const {posts} = await getPageData();
-  console.log(posts)
+  
   return (
     
     <main className="flex min-h-screen flex-col bg-black">

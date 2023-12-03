@@ -21,7 +21,7 @@ export default function BlogPost({postinfo}: PostSectionProps) {
     <div className="container mt-24 mx-auto px-3 md:px-12 py-4">
       {path && <Transition />}
       <Link
-        href="../blog"
+        href="/blog"
         className="text-base mb-4 sm:text-lg md:text-xl font-bold text-white dark:text-black w-fit flex items-center gap-4 hover:text-cyan-500 dark:hover:text-cyan-500"
       >
         <FaArrowLeft />

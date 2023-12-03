@@ -35,7 +35,7 @@ const getPostDetails = async (slug: string): Promise<PostPageData> => {
 
 export default async function PostBlog({params: {slug}}: PostParams) {
   const {posts} = await getPostDetails(slug);
-  
+  console.log(posts)
   return (
     <main className="flex min-h-screen flex-col bg-black">
         <BlogPost postinfo={posts}/>
@@ -51,7 +51,7 @@ export async function generateStaticParams() {
       }
     }
   `;
-  const { posts } = await fetchHygraphQuery<PostPageStaticData>(query);
+  const posts = await fetchHygraphQuery(query);
 
   return posts;
 }

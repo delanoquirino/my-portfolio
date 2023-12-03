@@ -1,26 +1,24 @@
-
 export type PostPageInfo = {
   id: string;
   title: string;
-  slug: string
-  coverImage: {
-    url: string;
+  slug: string;
+  content: {
+    json: [];
   };
   author: {
     name: string;
   };
   createdAt: string;
-  content: {
-    json: [];
-  }
-
+  coverImage: {
+    url: string;
+  };
 };
 
 export type PostPageStaticData = {
   posts: {
-    slug: string
-  }[]
-}
+    slug: string;
+  }[];
+};
 
 export type PostPageData = {
   posts: PostPageInfo[];
