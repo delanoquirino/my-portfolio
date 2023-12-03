@@ -66,4 +66,3 @@ export default function BlogPost({postinfo}: PostSectionProps) {
     </div>
   );
 }
-

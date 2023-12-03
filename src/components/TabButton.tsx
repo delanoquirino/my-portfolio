@@ -12,11 +12,11 @@ interface Props {
 }
 
 export const TabButton = ({ active, selectTab, children }: Props) => {
-  const buttonClasses = active ? "text-white" : "text-[#ADB7BE]";
+  const buttonClasses = active ? "text-cyan-500" : "text-[#ADB7BE]";
 
   return (
     <button onClick={selectTab}>
-      <p className={`mr-3 font-semibold hover:text-white ${buttonClasses}`}>
+      <p className={`mr-3 font-semibold hover:text-cyan-500 ${buttonClasses}`}>
         {children}
       </p>
       <motion.div

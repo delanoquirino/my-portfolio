@@ -2,7 +2,6 @@ import { fetchHygraphQuery } from "@/utils/fetch-hygraph-query";
 import { PostPageData, PostPageStaticData } from "@/types/postBlog-info";
 import BlogPost from "@/components/Blog/BlogPost";
 
-
 interface PostParams {
   params: {
     slug: string;
@@ -11,7 +10,7 @@ interface PostParams {
 
 const getPostDetails = async (slug: string): Promise<PostPageData> => {
   const GET_POST = `
-  query Post{
+  query Post() {
     posts(where: { slug: "${slug}"}) {
       id
       title
@@ -30,16 +29,16 @@ const getPostDetails = async (slug: string): Promise<PostPageData> => {
   }
 `;
 
-  return fetchHygraphQuery(GET_POST, 1000 * 60 * 60 * 24, );
+  return fetchHygraphQuery(GET_POST, 1000 * 60 * 60 * 24);
 };
 
-export default async function PostBlog({params: {slug}}: PostParams) {
-  const {posts} = await getPostDetails(slug);
-  console.log(posts)
+export default async function Post({ params: { slug } }: PostParams) {
+  const { posts } = await getPostDetails(slug);
+
   return (
-    <main className="flex min-h-screen flex-col bg-black">
-        <BlogPost postinfo={posts}/>
-    </main>
+    <div className="flex min-h-screen flex-col bg-black">
+      <BlogPost postinfo={posts} />
+    </div>
   );
 }
 
@@ -51,7 +50,7 @@ export async function generateStaticParams() {
       }
     }
   `;
-  const posts = await fetchHygraphQuery(query);
+  const { posts } = await fetchHygraphQuery<PostPageStaticData>(query);
 
   return posts;
 }
