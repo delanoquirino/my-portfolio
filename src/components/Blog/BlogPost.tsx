@@ -1,72 +1,66 @@
-"use client"
-import Link from "next/link";
-import { FaArrowLeft } from "react-icons/fa";
+"use client";
+
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { format } from "date-fns";
-import ptBR from "date-fns/locale/pt-BR";
+
+import { FaArrowLeft } from "react-icons/fa";
+
+import Link from "next/link";
+
+import format from "date-fns/format";
+import { ptBR } from "date-fns/locale";
 import { RichText } from "@graphcms/rich-text-react-renderer";
-import { Transition } from "@/components/Transition";
 import { PostPageInfo } from "@/types/postBlog-info";
 
 type PostSectionProps = {
   postinfo: PostPageInfo[];
 };
 
-export default function BlogPost({postinfo}: PostSectionProps) {
-  const path = usePathname();
- 
-
+export const BlogPost = ({ postinfo }: PostSectionProps) => {
+  console.log(postinfo[0]);
   return (
-    <div className="h-full w-full bg-black">
-
-
-    <div className="container mt-24 mx-auto px-3 md:px-12 py-4">
-      {path && <Transition />}
-      <Link
-        href="/blog"
-        className="text-base mb-4 sm:text-lg md:text-xl font-bold text-white dark:text-black w-fit flex items-center gap-4 hover:text-cyan-500 dark:hover:text-cyan-500"
-      >
-        <FaArrowLeft />
-        Voltar
-      </Link>
-      <div className="w-full h-full flex flex-col mt-8">
-        <div className="flex w-full h-56 sm:h-88 lg:h-[392px] relative rounded-2xl overflow-hidden">
+    <main className="min-h-[calc(100vh-15rem)] w-full bg-black dark:bg-white transition duration-300 ease-in-out ">
+      <div className="container text-white dark:text-black p-5">
+        <Link
+          href="../blog"
+          className="text-base sm:text-lg md:text-xl font-bold text-white dark:text-black w-fit flex items-center gap-4 hover:text-sky-500 dark:hover:text-sky-500"
+        >
+          {" "}
+          <FaArrowLeft />
+          Voltar
+        </Link>
+        <div className="flex items-center justify-center w-auto h-[300px] md:h-[500px] rounded-2xl relative">
           <Image
             src={postinfo[0].coverImage.url}
             alt={postinfo[0].title}
             fill={true}
-            objectFit="cover"
-            sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 60vw"
-
+            objectFit="contain"
+            className="rounded-2xl"
           />
         </div>
-        <div className="flex w-full flex-col mt-4 sm:mt-8">
-          <h2 className="font-bold text-2xl sm:text-4xl lg:text-[40px] text-white">
-          {postinfo[0].title}
+
+        <div className="flex w-full flex-col mt-8">
+          <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl">
+            {postinfo[0].title}
           </h2>
-          <div>
-            <p className="font-bold text-zinc-500">{postinfo[0].author.name}</p>
-            <p className="text-zinc-600 text-sm">
-              {format(new Date(postinfo[0].createdAt), "dd 'de' MMM 'de' yyyy", {
-                locale: ptBR,
-              })}
+
+          <div className="mt-2">
+            <p className="font-bold">{postinfo[0].author.name}</p>
+            <p>
+              {format(
+                new Date(postinfo[0].createdAt),
+                "dd 'de' MMM 'de' yyyy",
+                { locale: ptBR }
+              )}
             </p>
           </div>
           <RichText
             content={postinfo[0].content.json}
             renderers={{
-              p: ({ children }) => (
-                <p className="text-zinc-300 text-sm sm:text-base text-justify lg:text-left mt-4 sm:mt-8">
-                  {children}
-                </p>
-              ),
+              p: ({ children }) => <p className="mt-8 ">{children}</p>,
             }}
           />
         </div>
       </div>
-    </div>
-    </div>
+    </main>
   );
-}
-
+};

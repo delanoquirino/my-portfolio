@@ -1,6 +1,7 @@
 import { fetchHygraphQuery } from "@/utils/fetch-hygraph-query";
 import { PostPageData, PostPageStaticData } from "@/types/postBlog-info";
-import BlogPost from "@/components/Blog/BlogPost";
+import { BlogPost } from "@/components/Blog/BlogPost";
+
 
 interface PostParams {
   params: {
@@ -37,7 +38,7 @@ export default async function Post({ params: { slug } }: PostParams) {
 
   return (
     <div className="flex min-h-screen flex-col bg-black">
-      
+      <BlogPost postinfo={posts} />
     </div>
   );
 }
