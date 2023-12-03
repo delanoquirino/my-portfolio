@@ -56,9 +56,11 @@ export default async function Blog() {
             <Image
               src={posts[0]?.coverImage.url}
 
-              alt=""
+              alt={posts[0]?.title}
               fill={true}
               style={{ objectFit: "cover" }}
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 60vw"
+
             />
           </div>
           <div className="flex flex-1 h-full flex-col gap-3 lg:gap-6">
