@@ -15,7 +15,6 @@ import typescript from "../../public/iconskill/typescript.png";
 import jest from "../../public/iconskill/jest.png";
 import node from "../../public/iconskill/node.png";
 import Image from "next/image";
-
 const SkillIcon = [
   {
     id: 1,
@@ -71,46 +70,61 @@ const SkillIcon = [
     id: 11,
     src: node,
     title: "Node",
-   
   },
 ];
 
 export const MySkills = () => {
   return (
-    <div className="h-screen w-full items-center justify-between bg-cover bg-center">
-      <div className="flex flex-col gap-16 w-full text-center items-center mx-auto">
-        <div className="flex flex-col items-center gap-4">
-          <h1>Skills</h1>
+    <>
+      <div className="py-8 px-1 xl:gap-16 sm:py-16 xl:px-10">
+        <div className="flex flex-col gap-10 w-full text-center items-center mx-auto">
+          <div className="flex flex-col items-center gap-4">
+            <h1>Skills</h1>
+          </div>
+          <Swiper
+            slidesPerView={5}
+            loop={true}
+            autoplay={{ delay: 0, disableOnInteraction: false }}
+            speed={5000}
+            modules={[Autoplay]}
+            className="max-w-full"
+          >
+            {SkillIcon.map((skill, i) => (
+              <SwiperSlide key={i}>
+                <Image
+                  src={skill.src}
+                  alt={skill.title}
+                  width={50}
+                  height={50}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <Swiper
+            slidesPerView={5}
+            loop={true}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+              reverseDirection: true,
+            }}
+            speed={5000}
+            modules={[Autoplay]}
+            className="max-w-full"
+          >
+            {SkillIcon.map((skill, i) => (
+              <SwiperSlide key={i}>
+                <Image
+                  src={skill.src}
+                  alt={skill.title}
+                  width={50}
+                  height={50}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-        <Swiper
-          slidesPerView={5}
-          loop={true}
-          autoplay={{ delay: 0, disableOnInteraction: false }}
-          speed={5000}
-          modules={[Autoplay]}
-          className="max-w-[80%]"
-        >
-            {SkillIcon.map((skill, i) => (
-                <SwiperSlide key={i}>
-                    <Image src={skill.src} alt={skill.title} width={60} height={60} />
-                </SwiperSlide>
-            ))}
-        </Swiper>
-        <Swiper
-          slidesPerView={5}
-          loop={true}
-          autoplay={{ delay: 0, disableOnInteraction: false, reverseDirection:true }}
-          speed={5000}
-          modules={[Autoplay]}
-          className="max-w-[80%]"
-        >
-            {SkillIcon.map((skill, i) => (
-                <SwiperSlide key={i}>
-                    <Image src={skill.src} alt={skill.title} width={60} height={60} />
-                </SwiperSlide>
-            ))}
-        </Swiper>
       </div>
-    </div>
+    </>
   );
 };
