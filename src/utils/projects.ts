@@ -20,7 +20,7 @@ const projects = [
   {
     id: 2,
     title: "Sarah Soares",
-    description: "Projeto desenvolvido para a personal trainer Sarah Soares.",
+    description: "Projeto foi desenvolvido para a personal trainer Sarah Soares.",
     imageSrc: "/projects/sarahsoares.png",
     techBadges: [
       "Next.js",
@@ -52,14 +52,25 @@ const projects = [
   },
   {
     id: 4,
-    title: "CineMovie",
+    title: "Imóveis Prime",
     description:
-      "Projeto consumindo a API TMDB para listagem dos melhores filmes",
-    imageSrc: "/projects/cinemovie.png",
-    techBadges: ["Next.js", "Styled Components", "React Icons", "Fetch"],
+      "Este projeto de site para uma imobiliária visando proporcionar uma experiência ágil e eficiente para os usuários em busca de propriedades",
+    imageSrc: "/projects/imoveisprime.png",
+    techBadges: ["Next.js", "TailwindCSS", "React Icons", "Typescript"],
     tag: ["All", "Mobile"],
-    gitUrl: "https://github.com/delanoquirino/CineMovie",
-    previewUrl: "https://cine-movie-rho.vercel.app/",
+    gitUrl: "https://github.com/delanoquirino/imobiliaria",
+    previewUrl: "https://imoveisprime.vercel.app/",
+  },
+  {
+    id: 5,
+    title: "Arisetechnology Test",
+    description:
+      "Projeto para a vaga de Desenvolvedor Front-end da Arisetechnology, com o objetivo de site responsivo de receitas que o usuário consiga buscar receitas por nome, primeira letra e ingredientes.",
+    imageSrc: "/projects/arisetechnology.png",
+    techBadges: ["Vite", "ReactJS", "React Icons", "TailwindCSS", "Typescript", "Antd"],
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/delanoquirino/test_arisetechnology",
+    previewUrl: "https://test-arisetechnology.vercel.app/",
   },
 ];
 
