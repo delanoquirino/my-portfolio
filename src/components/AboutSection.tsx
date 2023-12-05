@@ -36,6 +36,8 @@ const TAB_DATA = [
       <ul className="list-square pl-2">
         <li>React ( hooks, router, API, Projetos) - Udemy</li>
         <li>Curso de Node.js - Guia do Programador</li>
+        <li>Typescript e React - Newtab Academy</li>
+        <li>NextJS do zero ao avançado na pratica - Matheus Fraga</li>
       </ul>
     ),
   },
