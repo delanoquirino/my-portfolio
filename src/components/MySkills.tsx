@@ -16,7 +16,6 @@ import jest from "../../public/iconskill/jest.png";
 import node from "../../public/iconskill/node.png";
 import Image from "next/image";
 import { Loading } from "./Loading";
-import { useEffect, useState } from "react";
 const SkillIcon = [
   {
     id: 1,
@@ -76,22 +75,8 @@ const SkillIcon = [
 ];
 
 export const MySkills = () => {
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-  
   return (
-    <>
- {loading ? (
-        <Loading />
-      ) : (
+    
         <div className="py-8 px-1 xl:gap-16 sm:py-16 xl:px-10">
         <div className="flex flex-col gap-10 w-full text-center items-center mx-auto">
           <div className="flex flex-col items-center gap-4">
@@ -141,10 +126,9 @@ export const MySkills = () => {
           </Swiper>
         </div>
       </div>
-      )}
+      
 
 
       
-    </>
   );
 };

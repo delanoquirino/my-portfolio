@@ -1,8 +1,6 @@
 "use client";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import { ApolloProvider } from "@apollo/client";
-import { client } from "@/lib/apollo";
 
 const roboto = Roboto({
   weight: "400",
@@ -16,11 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={roboto.className}>
-        <ApolloProvider client={client}>
-          {children}
-        </ApolloProvider>
-      </body>
+      <body className={roboto.className}>{children}</body>
     </html>
   );
 }
