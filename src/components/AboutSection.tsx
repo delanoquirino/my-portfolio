@@ -16,6 +16,7 @@ const TAB_DATA = [
         <li>TypeScript</li>
         <li>Node</li>
         <li>Jest</li>
+        <li>Azure Repos</li>
       </ul>
     ),
   },
@@ -38,6 +39,14 @@ const TAB_DATA = [
         <li>Curso de Node.js - Guia do Programador</li>
         <li>Typescript e React - Newtab Academy</li>
         <li>NextJS do zero ao avançado na pratica - Matheus Fraga</li>
+      </ul>
+    ),
+  }, {
+    title: "Experience",
+    id: "experience",
+    content: (
+      <ul className="list-square pl-2">
+        <li>Desenvolvedor Front-End React (estágio) - Indikatore - Supply Chain Services </li>
       </ul>
     ),
   },
@@ -76,21 +85,21 @@ export const AboutSection = () => {
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              
+
               Skills
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              
+
               Education
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
             >
-              
+
               Certifications
             </TabButton>
           </div>
