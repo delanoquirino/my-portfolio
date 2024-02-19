@@ -102,6 +102,13 @@ export const AboutSection = () => {
 
               Certifications
             </TabButton>
+             <TabButton
+              selectTab={() => handleTabChange("experience")}
+              active={tab === "experience"}
+            >
+
+              Experience
+            </TabButton>
           </div>
           <div className="mt-8">
             {TAB_DATA.find((t) => t.id === tab)
